@@ -1,8 +1,8 @@
 
-import {  FlatList, Image, StyleSheet,  Text,  View } from "react-native";
+import {  FlatList, Image, Pressable, StyleSheet,  Text,  View } from "react-native";
 import { getProducts } from "../data/api"
 import { useEffect, useState } from "react";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { shorten } from "../helper/functions";
 const ProductsScreen = () => {
     const [data,setData]=useState([])
@@ -28,6 +28,10 @@ const ProductsScreen = () => {
       <Image source={{uri:item.image}} style={styles.image}/>
       <Text style={styles.title}>{shorten(item.title)}</Text>
       <Link href={`/productsId/${item.id}`}>Deatails</Link>
+      {/* <Pressable onPress={()=>router.push({
+        pathname:"/products/[id]",
+        params:{id:item.id}
+      })}><Text>Deatails</Text></Pressable> */}
       </View>
     )}
     numColumns={2}

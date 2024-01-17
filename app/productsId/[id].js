@@ -30,7 +30,7 @@ const ProductsDetaildScreen = () => {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <Text style={styles.back}>
           <Link href={"/"}>back</Link>
         </Text>
@@ -41,7 +41,7 @@ const ProductsDetaildScreen = () => {
             <Text>{shorten(product.title)}</Text>
           )}
         </Text>
-      </View>
+      </View> */}
       <ScrollView>
         <Image source={{ uri: product.image }} style={styles.image} />
 
@@ -60,7 +60,7 @@ const ProductsDetaildScreen = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 10,
+   
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
