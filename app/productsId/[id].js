@@ -7,22 +7,41 @@ import {
   Text,
   View,
 } from "react-native";
-import { getProductsId } from "../data/api";
+import { getProductsId } from "../../src/data/api";
+import { Link, useLocalSearchParams } from "expo-router";
+import { shorten } from "../../src/helper/functions";
 
 const ProductsDetaildScreen = () => {
+  const params = useLocalSearchParams();
+
+  const id = params.id;
+
   const [product, setProduct] = useState([]);
+
   useEffect(() => {
     const fetch = async () => {
-      setProduct(await getProductsId(15));
+      setProduct(await getProductsId(id));
     };
     fetch();
   }, []);
-const addToCart=()=>{
-  console.log('add to cart');
-  
-}
+
+  const addToCart = () => {
+    console.log("add to cart");
+  };
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.back}>
+          <Link href={"/"}>back</Link>
+        </Text>
+        <Text style={styles.headerTitle}>
+          {!product.title ? (
+            <Text>...Loading</Text>
+          ) : (
+            <Text>{shorten(product.title)}</Text>
+          )}
+        </Text>
+      </View>
       <ScrollView>
         <Image source={{ uri: product.image }} style={styles.image} />
 
@@ -41,13 +60,33 @@ const addToCart=()=>{
 };
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 45,
+    marginVertical: 10,
     alignItems: "center",
     justifyContent: "center",
-    flex:1
- 
+    flex: 1,
   },
-
+  header: {
+    width: "97%",
+    borderRadius: 10,
+    backgroundColor: "black",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    height: 40,
+    alignItems: "center",
+  },
+  back: {
+    color: "white",
+    marginLeft: 15,
+    fontSize: 16,
+    fontWeight: "500",
+  },
+  headerTitle: {
+    color: "white",
+    marginRight: 150,
+    fontSize: 16,
+    fontWeight: "900",
+    letterSpacing: 1.5,
+  },
   image: {
     width: "100%",
     aspectRatio: 1,
@@ -57,8 +96,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    color:"white"
-   
+    color: "white",
   },
   title: {
     fontSize: 34,
