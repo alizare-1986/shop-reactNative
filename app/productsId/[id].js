@@ -52,9 +52,9 @@ const ProductsDetaildScreen = () => {
           <Text style={styles.description}>{product.description}</Text>
         </View>
       </ScrollView>
-      <Pressable onPress={addToCart} style={styles.button}>
+      {/* <Pressable onPress={addToCart} style={styles.button}>
         <Text style={styles.buttonText}>add to cart</Text>
-      </Pressable>
+      </Pressable> */}
     </View>
   );
 };
@@ -120,21 +120,21 @@ const styles = StyleSheet.create({
     fontWeight: "300",
     padding: 10,
   },
-  button: {
-    position: "absolute",
-    backgroundColor: "black",
-    bottom: 20,
-    width: "90%",
-    alignSelf: "center",
-    padding: 20,
-    borderRadius: 100,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "800",
-    fontSize: 16,
-  },
+  // button: {
+  //   position: "absolute",
+  //   backgroundColor: "black",
+  //   bottom: 20,
+  //   width: "90%",
+  //   alignSelf: "center",
+  //   padding: 20,
+  //   borderRadius: 100,
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  // },
+  // buttonText: {
+  //   color: "white",
+  //   fontWeight: "800",
+  //   fontSize: 16,
+  // },
 });
 export default ProductsDetaildScreen;

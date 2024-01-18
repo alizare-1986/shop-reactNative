@@ -7,22 +7,24 @@ const RootLayout = () => {
         name="index"
         options={{
           headerTitle: "shopping",
-headerTitleStyle:{
-color:"white"
-},
+          headerTitleStyle: {
+            color: "white",
+          },
           headerStyle: {
             backgroundColor: "black",
           },
         }}
       />
-      <Stack.Screen name="productsId/[id]" options={{
-        headerTitle:"DetailsProduct",
-        headerTintColor:"green",
-    headerStyle:{
-        backgroundColor:"black"
-    },
-   
-      }}  />
+      <Stack.Screen
+        name="productsId/[id]"
+        options={{
+          headerTitle: "DetailsProduct",
+          headerTintColor: "green",
+          headerStyle: {
+            backgroundColor: "black",
+          },
+        }}
+      />
     </Stack>
   );
 };
