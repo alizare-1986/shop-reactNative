@@ -33,6 +33,8 @@ const ProductsScreen = () => {
 
 export default ProductsScreen;
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+   
+  },
   
 });

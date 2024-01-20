@@ -9,7 +9,7 @@ const RootLayout = () => {
         <Stack.Screen
           name="index"
           options={{
-            headerTitle: "shopping",
+            headerTitle: "Shopping",
             headerTitleStyle: {
               color: "white",
             },
@@ -27,8 +27,17 @@ const RootLayout = () => {
               backgroundColor: "black",
             },
           }}
+        
         />
-        <Stack.Screen name="ShoppingCart"/>
+        <Stack.Screen name="ShoppingCart" 
+        options={{
+          headerTitle: "ShoppingCart",
+          headerTintColor: "green",
+          headerStyle: {
+            backgroundColor: "black",
+          },
+        }}
+        />
       </Stack>
     </CartContextProvider>
   );
