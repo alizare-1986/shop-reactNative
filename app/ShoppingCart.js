@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   containerBox: {
-    backgroundColor: "silver",
+    backgroundColor: "violet",
     width: "45%",
     marginTop: 50,
     height: 300,
