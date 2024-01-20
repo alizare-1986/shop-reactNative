@@ -10,6 +10,9 @@ import {
 import { getProductsId } from "../../src/data/api";
 import { Link, useLocalSearchParams } from "expo-router";
 import { shorten } from "../../src/helper/functions";
+import Header from "../../src/components/Header";
+
+
 
 const ProductsDetaildScreen = () => {
   const params = useLocalSearchParams();
@@ -30,6 +33,9 @@ const ProductsDetaildScreen = () => {
   };
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+      <Header />
+      </View>
       {/* <View style={styles.header}>
         <Text style={styles.back}>
           <Link href={"/"}>back</Link>
@@ -59,38 +65,42 @@ const ProductsDetaildScreen = () => {
   );
 };
 const styles = StyleSheet.create({
+  header:{
+    width:"100%"
+  },
   container: {
-   
+    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "center",
-    flex: 1,
+    flex:1
   },
-  header: {
-    width: "97%",
-    borderRadius: 10,
-    backgroundColor: "black",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    height: 40,
-    alignItems: "center",
-  },
-  back: {
-    color: "white",
-    marginLeft: 15,
-    fontSize: 16,
-    fontWeight: "500",
-  },
-  headerTitle: {
-    color: "white",
-    marginRight: 150,
-    fontSize: 16,
-    fontWeight: "900",
-    letterSpacing: 1.5,
-  },
+  // header: {
+  //   width: "97%",
+  //   borderRadius: 10,
+  //   backgroundColor: "black",
+  //   flexDirection: "row",
+  //   justifyContent: "space-between",
+  //   height: 40,
+  //   alignItems: "center",
+  // },
+  // back: {
+  //   color: "white",
+  //   marginLeft: 15,
+  //   fontSize: 16,
+  //   fontWeight: "500",
+  // },
+  // headerTitle: {
+  //   color: "white",
+  //   marginRight: 150,
+  //   fontSize: 16,
+  //   fontWeight: "900",
+  //   letterSpacing: 1.5,
+  // },
   image: {
     width: "100%",
     aspectRatio: 1,
     resizeMode: "contain",
+    marginTop:10
   },
   viewContainer: {
     display: "flex",
@@ -102,11 +112,13 @@ const styles = StyleSheet.create({
     fontSize: 34,
     fontWeight: "500",
     marginVertical: 10,
+    color: "white",
   },
   price: {
     letterSpacing: 1.5,
     fontSize: 16,
     fontWeight: "500",
+    color: "white",
   },
   category: {
     fontSize: 16,
@@ -119,6 +131,7 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     fontWeight: "300",
     padding: 10,
+    color: "white",
   },
   // button: {
   //   position: "absolute",
