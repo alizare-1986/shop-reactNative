@@ -19,7 +19,8 @@ const Card = ({data,dataCart}) => {
     const { state, dispatch } = useContext(CartContext);
   
     return (
-        <>
+      <>
+        <View style={{marginBottom:120}}>
          <FlatList
         data={data}
         renderItem={({ item }) => (
@@ -75,6 +76,8 @@ const Card = ({data,dataCart}) => {
          numColumns={2}
      
       />
+      </View>
+      <View style={{marginBottom:100,width:"55%"}}>
        <FlatList
         data={dataCart}
         renderItem={({ item }) => (
@@ -130,7 +133,7 @@ const Card = ({data,dataCart}) => {
          numColumns={1}
      
       />
-        </>
+        </View></>
     );
 };
 
@@ -138,7 +141,7 @@ export default Card;
 const styles = StyleSheet.create({
     itemContainer: {
         width: "47%",
-        padding: 10,
+        padding: 5,
         borderRadius: 20,
         justifyContent: "center",
         alignItems: "center",
@@ -218,6 +221,10 @@ const styles = StyleSheet.create({
     },
     details:{
         justifyContent:"center",
-        alignItems:"center"
-    }
-  });
+        alignItems:"center",
+        
+    },
+    
+  }
+  
+  );

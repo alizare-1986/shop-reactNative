@@ -6,7 +6,7 @@ const RootLayout = () => {
   return (
     <CartContextProvider>
       <Stack>
-        <Stack.Screen
+   <Stack.Screen
           name="index"
           options={{
             headerTitle: "Shopping",
@@ -16,6 +16,8 @@ const RootLayout = () => {
             headerStyle: {
               backgroundColor: "black",
             },
+            
+
           }}
         />
         <Stack.Screen
@@ -27,9 +29,9 @@ const RootLayout = () => {
               backgroundColor: "black",
             },
           }}
-        
+
         />
-        <Stack.Screen name="ShoppingCart" 
+        <Stack.Screen name="ShoppingCart"
         options={{
           headerTitle: "ShoppingCart",
           headerTintColor: "green",
@@ -38,7 +40,10 @@ const RootLayout = () => {
           },
         }}
         />
+       
+        
       </Stack>
+      
     </CartContextProvider>
   );
 };

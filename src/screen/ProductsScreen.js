@@ -1,20 +1,10 @@
-import {
-  
- 
-  StyleSheet,
-
-  View,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 import { getProducts } from "../data/api";
-import {  useEffect, useState } from "react";
-
-
+import { useEffect, useState } from "react";
 
 import Card from "../components/Card";
 
 const ProductsScreen = () => {
-  
-
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -26,7 +16,7 @@ const ProductsScreen = () => {
 
   return (
     <View style={styles.container}>
-     <Card data={data}/>
+      <Card data={data} />
     </View>
   );
 };
@@ -34,7 +24,6 @@ const ProductsScreen = () => {
 export default ProductsScreen;
 const styles = StyleSheet.create({
   container: {
-   
+    height: "100%",
   },
-  
 });
